@@ -7,6 +7,26 @@ body{
     background-image: url("images/patt.png");
 }
 
+/* ------------------------------------ */
+/* ---------------Colums---------------  */
+
+.col-1{
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+}
+
+.col-3{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-6{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+/* ------------------------------------ */
+/* ------------------------------------ */
+
 .container{
     max-width: 1200px;
     padding: 0 15px 0 15px;
@@ -24,22 +44,107 @@ body{
 }
 
 
-.col-1{
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-}
-
-.col-3{
-    flex: 0 0 25%;
-    max-width: 25%;
-}
-
-.col-6{
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
 .header{
     padding: 25px 0;
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logo{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    width: 25%;
+    border-left: 1px solid #2c71b8;
+}
+
+.menu li:last-child{
+    border-right: 1px solid #2c71b8;
+}
+
+.menu a{
+    display: flex;
+    height: 50px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    color: #2c71b8;
+}
+
+.menu a:hover{
+    background-color: #2c71b8;
+    color: white;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.search form{
+    height: 40px;
+    width: 200px;
+    border: 1px solid #2c71b8;
+    padding: 4px 4px 4px 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.search input{
+    display: block;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0);
+    border-style: none;
+    font-family: "Roboto", sans-serif;
+    width: 145px;
+}
+
+.search button{
+    border-style: none;
+    background-color: #2c71b8;
+    background-image: url("images/Search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+}
+
+.header-shop{
+    position: relative;
+}
+
+.header-shop div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    background-color: #2c71b8;
+    color: white;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.header-shop button{
+    border-style: none;
+    background-color: white;
+    background-image: url("images/shop-blue.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
 }
