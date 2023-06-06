@@ -97,7 +97,8 @@ body{
     background-image: url("images/arrow-down-white.svg");
 }
 
-/* .dropdown{
+/* ---------dropdown-menu----------- */
+.dropdown{
     position: relative;
 }
 
@@ -109,16 +110,29 @@ body{
     display: none;
     flex-direction: column;
     position: absolute;
+    left: -1px;
     background-color: #2c71b8;
     color: white;
+    width: 287px;
 }
 
 .dropdown-menu a{
-    margin: 25px;
-    font-size: 21px;
+    display: flex;
     color: white;
-} */
+    justify-content: left;
+    align-items: center;
+    height: 45px;
+    padding-left: 30px;
+}
 
+
+.dropdown-menu a:hover{
+    color: #2c71b8;
+    background-color: white;
+}
+
+
+/* --------------------------------- */
 
 .search{
     display: flex;
