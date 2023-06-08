@@ -151,14 +151,18 @@ body{
 }
 .search input{
     display: block;
-    height: 42px;
     background-color: rgba(255, 255, 255, 0);
     border-style: none;
     font-family: "Roboto", sans-serif;
     width: 145px;
     font-size: 21px;
     color: #2c71b8;
+    outline: none;
 }
+
+/* .search input:focus-visible{
+    overflow: hidden;
+} */
 
 .search button{
     border-style: none;
