@@ -1,8 +1,7 @@
+// Лічільник покупок
 let productsCountEL = document.getElementById("products-count");
-console.log(productsCountEL);
 
 let addToCartBtns = document.querySelectorAll(".btn-add-to-car");
-console.log(addToCartBtns);
 
 addToCartBtns.forEach((btn) =>
   btn.addEventListener("click", function () {
@@ -10,28 +9,57 @@ addToCartBtns.forEach((btn) =>
   })
 );
 
-let addLikeToDevice = document.querySelectorAll(".like-script");
+// Відображення лайку при натиску на кнопку лайк
+
+let addLikeToDevice = document.querySelectorAll(".like");
 console.log(addLikeToDevice);
 
-function changeLike() {
-  if (this.style.backgroundImage === 'url("images/like-white.png")') {
-    this.style.backgroundImage = 'url("images/like-blue.png")';
-    this.style.borderColor = "blue";
-  } else {
-    this.style.backgroundImage = 'url("images/like-white.png")';
-    this.style.borderColor = "white";
-  }
-}
-
-addLikeToDevice.forEach(function (element) {
-  element.addEventListener("click", changeLike);
-});
-
-// addLikeToDevice.forEach((like) =>
-//   like.addEventListener("click", function () {
-//     like = addLikeToDevice.setAttribute(
-//       "background-image",
-//       'url("images/like-white.png")'
-//     );
+// addLikeToDevice.forEach((btn) =>
+//   btn.addEventListener("click", function () {
+//     if (btn.classList.contains("liked")) {
+//       btn.classList.contains("liked");
+//       btn.classList.remove("liked");
+//     } else {
+//       btn.classList.add("liked");
+//     }
 //   })
 // );
+
+addLikeToDevice.forEach((btn) =>
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("liked");
+  })
+);
+
+// Відкриття форми для кнопки More detail
+
+let btnMoreDetails = document.querySelectorAll(".btn-more-details");
+
+let modal = document.querySelector(".modal");
+
+btnMoreDetails.forEach((btn) =>
+  btn.addEventListener("click", function () {
+    modal.classList.remove("hide");
+    modal.classList.add("show");
+  })
+);
+
+let modalClose = document.querySelector(".btn-close");
+
+modalClose.addEventListener("click", function () {
+  modal.classList.remove("show");
+  modal.classList.add("hide");
+});
+
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+    modal.classList.add("hide");
+  }
+});
+
+// ------slider-------
+
+$(".slider").slick({
+  dots: true,
+});
