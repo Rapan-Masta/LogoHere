@@ -538,7 +538,42 @@ input[type="checkbox"] {
   color: white;
   font-weight: bold;
   text-align: center;
-  margin: 15px 0 25px 0;
+  margin: 15px 0 15px 0;
+}
+
+.products-quantity {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.products-quantity > button {
+  height: 30px;
+  width: 30px;
+  border-radius: 0px;
+  border: 1px solid white;
+  background-color: #2c71b8;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.products-quantity > button:hover {
+  border: 1px solid #2c71b8;
+  background-color: white;
+  color: #2c71b8;
+}
+
+.products-quantity > input {
+  height: 30px;
+  border: 1px solid white;
+  background-color: #2c71b8;
+  color: white;
+  text-align: center;
+  font-size: 14px;
 }
 
 .sub {

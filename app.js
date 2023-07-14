@@ -12,7 +12,6 @@ addToCartBtns.forEach((btn) =>
 // Відображення лайку при натиску на кнопку лайк
 
 let addLikeToDevice = document.querySelectorAll(".like");
-console.log(addLikeToDevice);
 
 // addLikeToDevice.forEach((btn) =>
 //   btn.addEventListener("click", function () {
@@ -63,3 +62,49 @@ modal.addEventListener("click", function (e) {
 $(".slider").slick({
   dots: true,
 });
+
+// ----------------------
+
+let decrementBtns = document.querySelectorAll(".decrement-button");
+let incrementBtns = document.querySelectorAll(".increment-button");
+let inputFields = document.querySelectorAll(".product-quantity");
+
+function Counter(incrementBtn, decrementBtn, inputField) {
+  this.domRefs = {
+    incrementBtn,
+    decrementBtn,
+    inputField,
+  };
+
+  this.increment = function () {
+    this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+    this.toggleButtonState();
+  };
+
+  this.decrement = function () {
+    this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
+    this.toggleButtonState();
+  };
+
+  this.toggleButtonState = function () {
+    let count = this.domRefs.inputField.value;
+    this.domRefs.decrementBtn.disabled = count <= 1;
+    this.domRefs.incrementBtn.disabled = count >= 10;
+  };
+
+  this.domRefs.incrementBtn.addEventListener(
+    "click",
+    this.increment.bind(this)
+  );
+
+  this.domRefs.decrementBtn.addEventListener(
+    "click",
+    this.decrement.bind(this)
+  );
+
+  this.toggleButtonState();
+}
+
+for (let i = 0; i < decrementBtns.length; i++) {
+  let counter = new Counter(incrementBtns[i], decrementBtns[i], inputFields[i]);
+}
